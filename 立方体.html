@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>立方体</title>
+		<style type="text/css">
+			body{
+				perspective: 1000px;
+			}
+			.lifangti{
+				width: 200px;
+				height: 200px;
+				margin: 300px auto;
+				transform-style: preserve-3d; /*保留子元素3d效果*/
+				position: relative; /*这里设置相对位置,在元素位置要设置绝对位置*/
+				
+				animation: donghua 3s infinite; /*完成一整个动画持续4s, infinite是连续循环*/
+			}
+			@keyframes donghua{
+				from{
+					transform: rotate3D(1,1,0,0deg);
+				}
+				to{
+					transform: rotate3D(1,1,0,360deg);
+				}
+			}
+			
+			.lifangti .face{
+				width: 200px;
+				height: 200px;
+				position: absolute; /*设置绝对位置*/
+				left: 0;
+				top: 0;
+				opacity: 0.6; /*元素的透明度为0.6*/
+				transition: all 2s;  /*所有过渡动画2s*/
+			}
+			.front{
+				background-image: url(img/biketo.comnews40179.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: auto 100%;
+				transform: translateZ(100px);
+			}
+			.lifangti:hover .front{
+				transform: translateZ(200px);
+			}
+			
+			.back{
+				background-image: url(img/2.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: auto 100%;
+				transform: translateZ(-100px);
+			}
+			.lifangti:hover .back{
+				transform: translateZ(-200px);
+			}
+			.left{
+				background-image: url(img/3.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: auto 100%;
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			.lifangti:hover .left{
+				transform: rotateY(-90deg) translateZ(200px);
+			}
+			.right{
+				background-image: url(img/4.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: auto 100%;
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			.lifangti:hover .right{
+				transform: rotateY(90deg) translateZ(200px);
+			}
+			.top{
+				background-image: url(img/5.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: auto 100%;
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			.lifangti:hover .top{
+				transform: rotateX(90deg) translatez(200px);
+			}
+			.bottom{
+				background-image: url(img/6.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: auto 100%;
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			.lifangti:hover .bottom{
+				transform: rotateX(-90deg) translateZ(200px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lifangti">
+			<div class="face front"></div>
+			<div class="face back"></div>
+			<div class="face left"></div>
+			<div class="face right"></div>
+			<div class="face top"></div>
+			<div class="face bottom"></div>
+		</div>
+	</body>
+</html>
